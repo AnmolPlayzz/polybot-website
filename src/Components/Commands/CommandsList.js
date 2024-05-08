@@ -1,6 +1,10 @@
+import "./CommandsList.css"
+
 function CommandsList(args) {
     return (
-        <h1>Commands</h1>
+        <div className="commands-list">
+            <h1>coming soon</h1>
+        </div>
     )
 }
 

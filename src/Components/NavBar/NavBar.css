@@ -1,3 +1,7 @@
+.navbar-mobile {
+    display: none;
+}
+
 .navbar-desktop {
     position: fixed;
     top: 0;
@@ -50,7 +54,7 @@
 
 .underlay {
     position: absolute;
-    background: white;
+    background : linear-gradient(90deg, rgba(77, 252, 255, 1) 0%, rgba(160, 64, 255, 1) 50%, rgba(214, 64, 255, 1) 100%);
     transition: all 0.2s ease;
     opacity: 0;
     z-index: 8;
@@ -62,17 +66,17 @@
 }
 
 .navbar-desktop > .nav-container > ul > li > .active {
-    background : linear-gradient(90deg, rgba(77, 252, 255, 1) 0%, rgba(160, 64, 255, 1) 50%, rgba(214, 64, 255, 1) 100%);
     color: black;
     font-weight: 900;
 }
 
+.navbar-desktop > .nav-container > ul:hover > li > .active {
+    color: white;
+    font-weight: 900;
+}
 .navbar-desktop > .nav-container > ul > li > .active:hover {
-    background : linear-gradient(90deg, rgba(77, 252, 255, 1) 0%, rgba(160, 64, 255, 1) 50%, rgba(214, 64, 255, 1) 100%);
     color: black;
-    font-weight: 900;
 }
-
 .navbar-desktop > .nav-container > ul > li > a:hover {
     color: black;
     font-weight: 500;
@@ -85,7 +89,7 @@
     border: 1px solid #181818;
     margin: 7px;
 }
-.invite {
+.invite, .menu {
     float: right;
     height: 42px;
     width: 42px;
@@ -110,4 +114,196 @@
 
 .invite:hover .invite_icon {
     transform: rotate(135deg);
+}
+
+
+@media screen and (max-width: 625px) {
+
+    .home {
+        position: relative;
+    }
+
+    .navbar-desktop {
+        display: none;
+    }
+
+    .navbar-mobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90vw;
+        z-index: 10;
+        pointer-events: auto;
+        .nav-container {
+            box-sizing: content-box;
+            margin: 10px;
+            border-radius: 10px;
+            border: 1px solid #181818;
+            background : #0D0D0D;
+            background : rgba(13, 13, 13, .8);
+            backdrop-filter: blur(20px);
+            height: 58px;
+            width: 100%;
+
+            .menu {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                .menu_icon {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    height: 17px;
+                    transition: all 0.3s ease;
+                }
+                .close_icon {
+                    position: absolute;
+                    height: 17px;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(120%, -50%);
+                    transition: all 0.3s ease;
+
+                }
+                .menu_icon.icon_s {
+                    transform: translate(-300%, -50%);
+                }
+                .close_icon.icon_s {
+                    transform: translate(-50%, -50%);
+                }
+            }
+        }
+
+        .nav-menu {
+            transform: translateX(150%);
+            opacity: 0;
+            width: 100%;
+            height: 70vh;
+            display: none;
+            gap: 10px;
+            list-style: none;
+            margin: 7px 10px;
+            box-sizing: border-box;
+            padding: 20px;
+            border: 1px solid #181818;
+            border-radius: 11px;
+            backdrop-filter: blur(20px);
+            background: rgba(13, 13, 13, 0.81);
+            flex-direction: column;
+            z-index: 9;
+            transition: all 0.3s cubic-bezier(0.87, 0, 0.13, 1);;
+            ul {
+                width: 100%;
+                height: 100%;
+                box-sizing: border-box;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+                list-style: none;
+                margin: 0 0;
+                padding: 10px;
+                border: 1px solid #181818;
+                border-radius: 11px;
+                background: rgba(13, 13, 13, 0.58);
+                flex-direction: column;
+                z-index: 9;
+                li {
+                    text-align: left;
+                    margin: 8px 0;
+                    font-size: 35px;
+                    z-index: 9;
+
+                    a {
+                        background-image: linear-gradient(90deg, rgba(77, 252, 255, 1) 0%, rgba(160, 64, 255, 1) 50%, rgba(214, 64, 255, 1) 100%);
+                        background-size: 0%;
+                        background-repeat: no-repeat;
+                        text-align: left;
+                        text-decoration: none;
+                        padding: 15px 30px;
+                        border-radius : 11px;
+                        transition: all 0.2s ease;
+                    }
+                    .active {
+                        background-size: 100%;
+                        color: black;
+                        font-weight: 900;
+                    }
+
+                    a:active {
+                        background-color: white;
+                        color: black;
+                    }
+
+                }
+            }
+            .invite {
+                display: flex;
+                width: 100%;
+                height: 60px;
+                box-sizing: border-box;
+                justify-content: center;
+                align-items: center;
+                border-radius: 11px;
+                border: 1px solid #181818;
+                background: rgba(13, 13, 13, .54);
+                margin: 0px;
+                transition: all .2s ease;
+                .invite_icon {
+                    height: 24px;
+                }
+
+            }
+
+            .invite:hover {
+                .invite_icon{
+                    transform: rotate(0deg);
+                }
+            }
+            .invite:active {
+                background-color: white;
+
+                .invite_icon {
+                    transform: rotate(135deg);
+                }
+            }
+
+        }
+        .nav-menu.drawer-open {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    .current-tab {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        list-style: none;
+        margin: 7px auto;
+        padding: 4px;
+        background : rgba(13, 13, 13, .54);
+        border: 1px solid #181818;
+        border-radius : 14px;
+        height: 32px;
+        width: fit-content;
+        p {
+            background-image: linear-gradient(90deg, rgba(77, 252, 255, 1) 0%, rgba(160, 64, 255, 1) 50%, rgba(214, 64, 255, 1) 100%);
+            color: black;
+            font-weight: 900;
+            text-align: center;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius : 11px;
+            margin: 0;
+        }
+    }
 }
