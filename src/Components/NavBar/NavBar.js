@@ -32,7 +32,6 @@ function NavBar() {
     }
 
 
-
     async function handleClick(e) {
         if (drawerOpen===false) {
             await setDisplayMode("flex")
@@ -51,7 +50,13 @@ function NavBar() {
         setDrawerOpen(false)
     }
 
-    window.addEventListener('resize', handleMouseOut)
+    useEffect(() => {
+        window.addEventListener('resize', handleMouseOut);
+
+        return () => {
+            window.removeEventListener('resize', handleMouseOut);
+        };
+    }, []);
     document.addEventListener('readystatechange', function() {
         if (document.readyState === 'complete') {
             handleMouseOut()
