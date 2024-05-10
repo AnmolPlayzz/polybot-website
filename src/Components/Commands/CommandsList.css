@@ -80,6 +80,16 @@
     box-sizing: border-box;
     align-items: center;
     z-index: 6;
+    .expand-info {
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        span {
+            text-align: center;
+        }
+    }
 }
 
 

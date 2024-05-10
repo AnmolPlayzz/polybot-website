@@ -1,5 +1,6 @@
 import "./CommandsList.css"
 import CommandCategory from "./CommandCategory";
+import arrow from "../../Assets/Images/arrow.svg"
 const commands = [
     {
         "title": "Bot Commands",
@@ -121,6 +122,9 @@ function CommandsList(args) {
                 </div>
             </div>
             <div className="commands-list">
+                <div className="expand-info">
+                    <span>Click the arrow next to a command to know more about it.</span>
+                </div>
                 {commands.map((command, index) => (
                     <CommandCategory command={command} key={index}/>
                 ))}
