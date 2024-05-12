@@ -107,8 +107,59 @@ const commands = [
                 "permissions": ["Manage Server"]
             }
         ]
+    },
+    {
+        "title": "Rank Commands",
+        "description": "Commands for retrieving user ranks and leaderboard data.",
+        "commands": [
+            {
+                "title": "rank",
+                "description": "Returns a user's rank.",
+                "options": [
+                    {"name": "target", "description": "The user to get the rank for.", "required": false}
+                ]
+            },
+            {
+                "title": "leaderboard",
+                "description": "Returns the leaderboard data of this server."
+            }
+        ]
+    },
+    {
+        "title": "Rank Manager Commands",
+        "description": "Commands for managing the rank module on a server.",
+        "commands": [
+            {
+                "title": "setup-rank",
+                "description": "Set up the rank module on this server.",
+                "permissions": ["Manage Server"]
+            },
+            {
+                "title": "disable-rank",
+                "description": "Disable the rank module on this server.",
+                "permissions": ["Manage Server"]
+            },
+            {
+                "title": "set-level",
+                "description": "Set the level for a user on this server.",
+                "options": [
+                    {"name": "target", "description": "The user to set the level for.", "required": true},
+                    {"name": "level", "description": "The level to set.", "required": true}
+                ],
+                "permissions": ["Manage Server"]
+            },
+            {
+                "title": "set-xp",
+                "description": "Set the xp for a user on this server.",
+                "options": [
+                    {"name": "target", "description": "The user to set the xp for.", "required": true},
+                    {"name": "xp", "description": "The xp to set.", "required": true}
+                ],
+                "permissions": ["Manage Server"]
+            }
+        ]
     }
-
+    
 ]
 function CommandsList(args) {
     return (
