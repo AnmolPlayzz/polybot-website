@@ -158,8 +158,36 @@ const commands = [
                 "permissions": ["Manage Server"]
             }
         ]
-    }
-    
+    },
+    {
+        "title": "Silly Commands",
+        "description": "Commands for getting a lil freaky 👅.",
+        "commands": [
+            {
+                "title": "hug",
+                "description": "Hug a user (with cute cat gifs :3).",
+                "options": [
+                    {"name": "target", "description": "The user to hug.", "required": true}
+                ]
+            },
+            {
+                "title": "meme",
+                "description": "Get a random meme from reddit."
+            },
+            {
+                "title": "copypasta",
+                "description": "Get a random copypasta from reddit."
+            },
+            {
+                "title": "mock",
+                "description": "mOcK a given string. (Also available as context menus)",
+                "options": [
+                    {"name": "text", "description": "The text to mock.", "required": true}
+                ]
+            }
+        ]
+    }  
+
 ]
 function CommandsList(args) {
     return (
