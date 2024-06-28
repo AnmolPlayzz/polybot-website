@@ -171,6 +171,13 @@ const commands = [
                 ]
             },
             {
+                "title": "slap",
+                "description": "Slap a user (with CERTAINLY NOT cute cat gifs :3).",
+                "options": [
+                    {"name": "target", "description": "The user to slap.", "required": true}
+                ]
+            },
+            {
                 "title": "meme",
                 "description": "Get a random meme from reddit."
             },
@@ -186,7 +193,56 @@ const commands = [
                 ]
             }
         ]
-    }  
+    },
+    {
+    "title": "Utility Commands",
+    "description": "Commands for various utilities like weather, AQI, conversions, and more.",
+    "commands": [
+        {
+            "title": "weather",
+            "description": "Get the current and forecast weather data for a location.",
+            "options": [
+                {"name": "location", "description": "The location to get weather data for.", "required": true}
+            ]
+        },
+        {
+            "title": "aqi",
+            "description": "Get the current AQI data for a location.",
+            "options": [
+                {"name": "location", "description": "The location to get AQI data for.", "required": true}
+            ]
+        },
+        {
+            "title": "unit-convert",
+            "description": "Convert a quantity from one unit to another.",
+            "options": [
+                {"name": "quantity", "description": "The quantity to convert.", "required": true}
+            ]
+        },
+        {
+            "title": "currency-convert",
+            "description": "Convert money from one currency to another.",
+            "options": [
+                {"name": "input_currency", "description": "The currency to convert from.", "required": true},
+                {"name": "output_currency", "description": "The currency to convert to.", "required": true},
+                {"name": "value", "description": "The amount to convert.", "required": true}
+            ]
+        },
+        {
+            "title": "calculator",
+            "description": "Use a button calculator inside discord."
+        },
+        {
+            "title": "webss",
+            "description": "Take a screenshot of a given website.",
+            "options": [
+                {"name": "url", "description": "The URL of the website to screenshot.", "required": true},
+                {"name": "wait", "description": "Time to wait before taking the screenshot.", "required": false}
+            ]
+        }
+    ]
+}
+
 
 ]
 function CommandsList(args) {
